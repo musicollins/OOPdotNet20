@@ -1,21 +1,25 @@
-﻿using OOP.Model;
-using System;
+﻿using OOP.Data;
+using OOP.Data.DataSource;
+using OOP.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP.UI.DataAccess
 {
     public class EmployeeDataAccess
     {
-        public List<Employee> Employees{ get; set; }
+        private readonly AbstractDataSource _dataSource;
 
+        public EmployeeDataAccess(AbstractDataSource dataSource)
+        {
+            _dataSource = dataSource;
+        }
+    
         public List<Employee> GetEmployees()
         {
             //Todo:
             //Get All Employees from Data Source
-            return new List<Employee>();
+            var employees = _dataSource.ProvideEmployees();
+            return employees;
         }
     }
 }
