@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OOP.Data\OOP.Data.csproj" />
     <ProjectReference Include="..\OOP.Model\OOP.Model.csproj" />
   </ItemGroup>
 
